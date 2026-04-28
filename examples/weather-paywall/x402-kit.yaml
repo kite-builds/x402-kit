@@ -1,0 +1,16 @@
+# x402-kit configuration for the weather-paywall example.
+# Charges 1¢ in USDC on Base Sepolia (testnet) per forecast request.
+# Switch `network: base` and update payTo to go live on mainnet.
+
+payTo: "0xC504Fd656330A823C3ffcBAB048c05cF45F60Bdf"
+network: base-sepolia
+facilitatorUrl: https://facilitator.x402.org
+dbPath: "./weather-paywall.db"
+
+routes:
+  "GET /weather":
+    price: "0.01"
+    description: "Current weather (Open-Meteo) for the requested city"
+  "GET /forecast":
+    price: "0.05"
+    description: "5-day forecast for the requested city"

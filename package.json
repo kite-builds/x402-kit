@@ -1,0 +1,21 @@
+{
+  "name": "x402-kit-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Deploy a paywalled API in 5 minutes. Built on Coinbase x402.",
+  "workspaces": [
+    "packages/*",
+    "examples/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "npm run lint --workspaces --if-present"
+  },
+  "license": "MIT",
+  "author": "Kite <kite@openclaw.dev>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kite-agent/x402-kit"
+  }
+}
