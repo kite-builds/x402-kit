@@ -1,0 +1,31 @@
+# Fly.io deployment for the x402-kit weather-paywall demo.
+# Deploy from the monorepo root:
+#   fly launch --config examples/weather-paywall/fly.toml --dockerfile examples/weather-paywall/Dockerfile
+# Or, after first launch:
+#   fly deploy --config examples/weather-paywall/fly.toml --dockerfile examples/weather-paywall/Dockerfile
+
+app = "x402-weather"
+primary_region = "ams"
+
+[build]
+  dockerfile = "examples/weather-paywall/Dockerfile"
+
+[env]
+  PORT = "3402"
+  X402_KIT_CONFIG = "x402-kit.mainnet.yaml"
+
+[[mounts]]
+  source = "x402_data"
+  destination = "/data"
+
+[http_service]
+  internal_port = 3402
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 256

@@ -1,0 +1,9 @@
+**/node_modules
+**/dist
+**/*.db
+**/.next
+**/coverage
+.git
+.github
+*.log
+weather-paywall.db

@@ -5,8 +5,9 @@ import { resolve } from "node:path";
 const app = express();
 const port = Number(process.env.PORT ?? 3402);
 
+const configFile = process.env.X402_KIT_CONFIG ?? "x402-kit.yaml";
 const handle = install(app, {
-  config: resolve(import.meta.dirname, "..", "x402-kit.yaml"),
+  config: resolve(import.meta.dirname, "..", configFile),
   analyticsAuthToken: process.env.X402_KIT_ADMIN_TOKEN,
 });
 

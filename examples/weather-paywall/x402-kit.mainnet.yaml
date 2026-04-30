@@ -1,0 +1,16 @@
+# Mainnet variant of the weather-paywall config.
+# Charges real USDC on Base. Used for the public live demo.
+# To run locally against testnet, use x402-kit.yaml (the default) instead.
+
+payTo: "0xC504Fd656330A823C3ffcBAB048c05cF45F60Bdf"
+network: base
+facilitatorUrl: https://facilitator.x402.org
+dbPath: "/data/weather-paywall.db"
+
+routes:
+  "GET /weather":
+    price: "0.01"
+    description: "Current weather (Open-Meteo) for the requested city"
+  "GET /forecast":
+    price: "0.05"
+    description: "5-day forecast for the requested city"
