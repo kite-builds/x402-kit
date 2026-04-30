@@ -2,7 +2,7 @@
 
 > Deploy a paywalled API in 5 minutes. YAML route config, SQLite analytics, settlement webhooks — all built on Coinbase's [x402](https://x402.org) payment protocol.
 
-[![tests](https://img.shields.io/badge/tests-9%2F9_passing-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-23%2F23_passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-blue)]()
 
 `@x402/express` gives you a low-level middleware. **`x402-kit` gives you a paywall product.** YAML pricing, persistent usage logs, settlement webhooks, an analytics dashboard, and an example you can deploy today.
@@ -150,7 +150,8 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Example server** — shipped (Open-Meteo weather paywall on Base Sepolia)
 - **Analytics endpoints** — shipped (`/__x402/metrics`, `/__x402/events`, `/__x402/health`)
 - **CLI scaffolder** — shipped, 7/7 tests passing (`npx x402-kit init <name>`)
-- **Hosted dashboard** — planned (Next.js, reads from `/__x402/*`)
+- **Dashboard client** — shipped, 7/7 tests passing (`@x402-kit/dashboard` typed client for `/__x402/*`)
+- **Hosted dashboard UI** — planned (Next.js, will consume `@x402-kit/dashboard`)
 - **Live demo deployment** — planned
 
 ## License

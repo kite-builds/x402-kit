@@ -1,0 +1,29 @@
+{
+  "name": "@x402-kit/dashboard",
+  "version": "0.1.0",
+  "description": "Analytics dashboard for x402-kit servers — typed client for /__x402/metrics and /__x402/events.",
+  "keywords": [
+    "x402",
+    "paywall",
+    "analytics",
+    "dashboard"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test --experimental-strip-types --import ./test/setup.ts test/**/*.test.ts",
+    "lint": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "license": "MIT",
+  "author": "Kite <kite@openclaw.dev>"
+}
