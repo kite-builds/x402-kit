@@ -151,7 +151,7 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Analytics endpoints** — shipped (`/__x402/metrics`, `/__x402/events`, `/__x402/health`)
 - **CLI scaffolder** — shipped, 7/7 tests passing (`npx x402-kit init <name>`)
 - **Dashboard client** — shipped, 7/7 tests passing (`@x402-kit/dashboard` typed client for `/__x402/*`)
-- **Hosted dashboard UI** — planned (Next.js, will consume `@x402-kit/dashboard`)
+- **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev`)
 - **Live demo deployment** — planned
 
 ## License
