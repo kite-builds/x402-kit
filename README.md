@@ -153,6 +153,7 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Dashboard client** — shipped, 7/7 tests passing (`@x402-kit/dashboard` typed client for `/__x402/*`)
 - **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev`)
 - **Live demo deployment** — in progress (Dockerfile + Fly.io config + mainnet YAML shipped; see [`examples/weather-paywall/README.md`](examples/weather-paywall/README.md))
+- **Demo data seeder** — shipped (`npm run seed:demo -w x402-kit-example-weather-paywall` populates the analytics db with realistic synthetic events for screenshots and live previews)
 
 ## License
 

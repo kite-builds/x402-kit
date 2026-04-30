@@ -8,7 +8,8 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/server.js",
-    "dev": "node --watch --experimental-strip-types src/server.ts"
+    "dev": "node --watch --experimental-strip-types src/server.ts",
+    "seed:demo": "node dist/scripts/seed-demo.js"
   },
   "dependencies": {
     "express": "^4.19.0",

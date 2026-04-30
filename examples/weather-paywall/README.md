@@ -46,3 +46,22 @@ curl https://x402-weather.fly.dev/weather?city=Oslo
 
 Pay-and-replay flow is handled by any x402-compatible client (e.g. the SDK in
 `@coinbase/x402`).
+
+## Seed demo data (for screenshots / dashboard preview)
+
+The dashboard UI looks bleak on an empty database. To populate the SQLite
+analytics db with realistic synthetic events:
+
+```bash
+npm run build
+npm run seed:demo -- --reset --events 80 --network base
+```
+
+Flags:
+
+- `--db <path>`     SQLite path (default `./weather-paywall.db`)
+- `--network <n>`   `base` or `base-sepolia` (default `base`)
+- `--events <n>`    Number of synthetic events (default `80`)
+- `--reset`         Delete the db file before seeding
+
+Then point `@x402-kit/dashboard-ui` at the running server (`X402_URL=http://localhost:3402 npm run dev -w @x402-kit/dashboard-ui`) to view the populated metrics, recent events, and per-route revenue tables.
