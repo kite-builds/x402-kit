@@ -20,6 +20,15 @@
 
 ## 5-minute quickstart
 
+Scaffold a fresh project with the CLI:
+
+```bash
+npx x402-kit init my-paywall
+cd my-paywall && npm install && npm run dev
+```
+
+…or wire x402-kit into an existing Express app:
+
 ```bash
 npm install x402-kit express
 ```
@@ -140,7 +149,7 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Server middleware** — shipped, 9/9 tests passing
 - **Example server** — shipped (Open-Meteo weather paywall on Base Sepolia)
 - **Analytics endpoints** — shipped (`/__x402/metrics`, `/__x402/events`, `/__x402/health`)
-- **CLI scaffolder** — planned (`npx x402-kit init <name>`)
+- **CLI scaffolder** — shipped, 7/7 tests passing (`npx x402-kit init <name>`)
 - **Hosted dashboard** — planned (Next.js, reads from `/__x402/*`)
 - **Live demo deployment** — planned
 

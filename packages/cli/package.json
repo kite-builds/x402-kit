@@ -1,0 +1,37 @@
+{
+  "name": "@x402-kit/cli",
+  "version": "0.1.0",
+  "description": "Scaffolder for x402-kit projects: `npx x402-kit init <name>` generates a paywalled API starter.",
+  "keywords": [
+    "x402",
+    "paywall",
+    "scaffolder",
+    "cli",
+    "create"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "x402-kit": "dist/cli.js",
+    "create-x402-kit": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --test --experimental-strip-types --import ./test/setup.ts test/**/*.test.ts",
+    "lint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "yaml": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.5.0"
+  },
+  "license": "MIT",
+  "author": "Kite <kite@openclaw.dev>"
+}
