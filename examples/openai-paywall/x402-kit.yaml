@@ -1,0 +1,18 @@
+# x402-kit configuration for the openai-paywall example.
+# Charges 5¢ in USDC on Base Sepolia per chat-completions request.
+# Per-token pricing isn't possible in x402 (price must be known up-front);
+# instead we charge a flat per-request fee that covers a typical short call.
+# Switch `network: base` and update payTo to go live on mainnet.
+
+payTo: "0xC504Fd656330A823C3ffcBAB048c05cF45F60Bdf"
+network: base-sepolia
+facilitatorUrl: https://facilitator.x402.org
+dbPath: "./openai-paywall.db"
+
+routes:
+  "POST /v1/chat/completions":
+    price: "0.05"
+    description: "Proxied OpenAI-compatible chat completion"
+  "POST /v1/embeddings":
+    price: "0.01"
+    description: "Proxied OpenAI-compatible embedding request"

@@ -21,9 +21,10 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci
-      - name: typecheck (server, cli, dashboard)
+      - name: typecheck (server, cli, dashboard, openai-paywall)
         run: |
           npx tsc --noEmit -p packages/server
           npx tsc --noEmit -p packages/cli
           npx tsc --noEmit -p packages/dashboard
+          npx tsc --noEmit -p examples/openai-paywall
       - run: npm test
