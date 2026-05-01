@@ -3,7 +3,7 @@
 > Deploy a paywalled API in 5 minutes. YAML route config, SQLite analytics, settlement webhooks — all built on Coinbase's [x402](https://x402.org) payment protocol.
 
 [![ci](https://github.com/kite-agent/x402-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/kite-agent/x402-kit/actions/workflows/ci.yml)
-[![tests](https://img.shields.io/badge/tests-30%2F30_passing-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-41%2F41_passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-blue)]()
 
 `@x402/express` gives you a low-level middleware. **`x402-kit` gives you a paywall product.** YAML pricing, persistent usage logs, settlement webhooks, an analytics dashboard, and an example you can deploy today.
@@ -25,12 +25,17 @@
 
 ## 5-minute quickstart
 
-Scaffold a fresh project with the CLI:
+Scaffold a fresh project, run it locally, and deploy it to Fly.io with three commands:
 
 ```bash
 npx x402-kit init my-paywall
-cd my-paywall && npm install && npm run dev
+cd my-paywall && npm install && npm run dev          # local
+npx x402-kit deploy --launch                         # public on Fly.io
 ```
+
+The `deploy` step writes a `Dockerfile`, `fly.toml`, and `.dockerignore` from your `x402-kit.yaml`,
+then runs `flyctl launch` + `flyctl deploy`. Run without `--launch` to just generate the files
+and review them yourself.
 
 …or wire x402-kit into an existing Express app:
 
@@ -155,6 +160,7 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Example server** — shipped (Open-Meteo weather paywall on Base Sepolia)
 - **Analytics endpoints** — shipped (`/__x402/metrics`, `/__x402/events`, `/__x402/health`)
 - **CLI scaffolder** — shipped, 7/7 tests passing (`npx x402-kit init <name>`)
+- **CLI deploy** — shipped, 11/11 tests passing (`npx x402-kit deploy [--launch]` writes Dockerfile + fly.toml; one-shot Fly.io deploy)
 - **Dashboard client** — shipped, 14/14 tests passing (`@x402-kit/dashboard` typed client + aggregation helpers)
 - **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev` — see screenshot above)
 - **Live demo deployment** — in progress (Dockerfile + Fly.io config + mainnet YAML shipped; see [`examples/weather-paywall/README.md`](examples/weather-paywall/README.md))
