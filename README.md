@@ -2,10 +2,14 @@
 
 > Deploy a paywalled API in 5 minutes. YAML route config, SQLite analytics, settlement webhooks — all built on Coinbase's [x402](https://x402.org) payment protocol.
 
-[![tests](https://img.shields.io/badge/tests-23%2F23_passing-brightgreen)]()
+[![tests](https://img.shields.io/badge/tests-30%2F30_passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-blue)]()
 
 `@x402/express` gives you a low-level middleware. **`x402-kit` gives you a paywall product.** YAML pricing, persistent usage logs, settlement webhooks, an analytics dashboard, and an example you can deploy today.
+
+![x402-kit dashboard](docs/screenshots/dashboard.png)
+
+*The `@x402-kit/dashboard-ui` package, rendering live `/__x402/metrics` + `/__x402/events` from a running paywalled server.*
 
 ## Why x402-kit instead of `@x402/express` directly?
 
@@ -150,8 +154,8 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Example server** — shipped (Open-Meteo weather paywall on Base Sepolia)
 - **Analytics endpoints** — shipped (`/__x402/metrics`, `/__x402/events`, `/__x402/health`)
 - **CLI scaffolder** — shipped, 7/7 tests passing (`npx x402-kit init <name>`)
-- **Dashboard client** — shipped, 7/7 tests passing (`@x402-kit/dashboard` typed client for `/__x402/*`)
-- **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev`)
+- **Dashboard client** — shipped, 14/14 tests passing (`@x402-kit/dashboard` typed client + aggregation helpers)
+- **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev` — see screenshot above)
 - **Live demo deployment** — in progress (Dockerfile + Fly.io config + mainnet YAML shipped; see [`examples/weather-paywall/README.md`](examples/weather-paywall/README.md))
 - **Demo data seeder** — shipped (`npm run seed:demo -w x402-kit-example-weather-paywall` populates the analytics db with realistic synthetic events for screenshots and live previews)
 
