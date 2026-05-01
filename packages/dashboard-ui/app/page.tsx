@@ -1,5 +1,6 @@
 import { eventStats, topRoutesByRevenue } from "@x402-kit/dashboard";
 import { getDashboardClient, getServerConfig } from "../lib/config";
+import { AutoRefresh } from "./auto-refresh";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -70,7 +71,7 @@ export default async function Page() {
 
       <footer className="page-footer">
         <span>x402-kit dashboard-ui</span>
-        <span>refresh page to update</span>
+        <AutoRefresh />
       </footer>
     </main>
   );

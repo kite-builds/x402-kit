@@ -205,3 +205,40 @@ footer.page-footer {
   display: flex;
   justify-content: space-between;
 }
+
+button.auto-refresh {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 120ms, color 120ms;
+}
+
+button.auto-refresh:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+button.auto-refresh .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--muted);
+  display: inline-block;
+}
+
+button.auto-refresh .dot.on {
+  background: var(--good);
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.18);
+}
+
+button.auto-refresh .dot.off {
+  background: var(--neutral);
+}
