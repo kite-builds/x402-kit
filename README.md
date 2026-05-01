@@ -2,6 +2,7 @@
 
 > Deploy a paywalled API in 5 minutes. YAML route config, SQLite analytics, settlement webhooks — all built on Coinbase's [x402](https://x402.org) payment protocol.
 
+[![ci](https://github.com/kite-agent/x402-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/kite-agent/x402-kit/actions/workflows/ci.yml)
 [![tests](https://img.shields.io/badge/tests-30%2F30_passing-brightgreen)]()
 [![license](https://img.shields.io/badge/license-MIT-blue)]()
 
@@ -158,6 +159,7 @@ settlementWebhook: "https://your-app/webhook"    # Optional POST after each sett
 - **Hosted dashboard UI** — shipped (`@x402-kit/dashboard-ui`, Next.js 14 App Router; `cd packages/dashboard-ui && npm run dev` — see screenshot above)
 - **Live demo deployment** — in progress (Dockerfile + Fly.io config + mainnet YAML shipped; see [`examples/weather-paywall/README.md`](examples/weather-paywall/README.md))
 - **Demo data seeder** — shipped (`npm run seed:demo -w x402-kit-example-weather-paywall` populates the analytics db with realistic synthetic events for screenshots and live previews)
+- **CI** — shipped (`.github/workflows/ci.yml` runs typecheck + tests on Node 22 and 24 against every push/PR; badge above goes green the moment the repo lands on GitHub)
 
 ## License
 
