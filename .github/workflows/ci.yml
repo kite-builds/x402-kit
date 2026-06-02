@@ -21,8 +21,8 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: npm
       - run: npm ci
-      - name: build x402-kit (emit dist so workspace consumers resolve types)
-        run: npm run build -w x402-kit
+      - name: build TS packages (emit dist for typecheck + tests)
+        run: npm run build -w x402-kit -w @x402-kit/cli -w @x402-kit/dashboard
       - name: typecheck (server, cli, dashboard, openai-paywall)
         run: |
           npx tsc --noEmit -p packages/server
